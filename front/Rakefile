@@ -1,0 +1,5 @@
+require 'rake/docker_lib'
+
+Rake::DockerLib.new("tclavier/ci-lb") do
+end
+

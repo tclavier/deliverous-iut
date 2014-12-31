@@ -1,7 +1,18 @@
 jenkins:
-  image: jenkins
+  image: tclavier/jenkins
+
+tomcat: 
+  image: tclavier/tomcat
+
+lb:
+  image: tclavier/ci-lb
+  links:
+  - name: jenkins
+    alias: jenkins
+  - name: tomcat
+    alias: tomcat
   ports:
-  - ip: ip
-    container_port: 8080
+  - ip: 5.135.124.160
+    container_port: 80
     host_port: 80
 

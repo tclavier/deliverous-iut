@@ -1,0 +1,13 @@
+require 'rake/docker_lib'
+
+directory 'src/plugins' do
+  sh "mkdir -p src/plugins"
+  sh "cd src/plugins && wget http://updates.jenkins-ci.org/latest/git.hpi"
+end
+
+Rake::DockerLib.new("tclavier/jenkins") do
+  prepare do
+    #sh "wget -O src/plugins/git.hpi http://updates.jenkins-ci.org/latest/git.hpi"
+  end
+end
+

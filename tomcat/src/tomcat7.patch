@@ -1,0 +1,38 @@
+--- tomcat7.org	2014-02-22 22:42:27.000000000 +0100
++++ tomcat7	2014-12-31 11:05:46.000000000 +0100
+@@ -195,7 +195,7 @@
+ 
+ 	log_daemon_msg "Starting $DESC" "$NAME"
+ 	if start-stop-daemon --test --start --pidfile "$CATALINA_PID" \
+-		--user $TOMCAT7_USER --exec "$JAVA_HOME/bin/java" \
++		--user $TOMCAT7_USER --startas "$JAVA_HOME/bin/java" \
+ 		>/dev/null; then
+ 
+ 		# Regenerate POLICY_CACHE file
+@@ -217,7 +217,7 @@
+ 		catalina_sh start $SECURITY
+ 		sleep 5
+         	if start-stop-daemon --test --start --pidfile "$CATALINA_PID" \
+-			--user $TOMCAT7_USER --exec "$JAVA_HOME/bin/java" \
++			--user $TOMCAT7_USER --startas "$JAVA_HOME/bin/java" \
+ 			>/dev/null; then
+ 			if [ -f "$CATALINA_PID" ]; then
+ 				rm -f "$CATALINA_PID"
+@@ -257,7 +257,7 @@
+    status)
+ 	set +e
+ 	start-stop-daemon --test --start --pidfile "$CATALINA_PID" \
+-		--user $TOMCAT7_USER --exec "$JAVA_HOME/bin/java" \
++		--user $TOMCAT7_USER --startas "$JAVA_HOME/bin/java" \
+ 		>/dev/null 2>&1
+ 	if [ "$?" = "0" ]; then
+ 
+@@ -282,7 +282,7 @@
+ 	;;
+   try-restart)
+         if start-stop-daemon --test --start --pidfile "$CATALINA_PID" \
+-		--user $TOMCAT7_USER --exec "$JAVA_HOME/bin/java" \
++		--user $TOMCAT7_USER --startas "$JAVA_HOME/bin/java" \
+ 		>/dev/null; then
+ 		$0 start
+ 	fi
