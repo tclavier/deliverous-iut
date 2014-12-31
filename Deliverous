@@ -1,5 +1,8 @@
 jenkins:
   image: tclavier/jenkins
+  links:
+  - name: tomcat
+    alias: tomcat
 
 tomcat: 
   image: tclavier/tomcat
