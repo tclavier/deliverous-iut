@@ -3,9 +3,13 @@ jenkins:
   links:
   - name: tomcat
     alias: tomcat
+  limits:
+    memory: 2G
 
 tomcat: 
   image: tclavier/tomcat
+  limits:
+    memory: 2G
 
 lb:
   image: tclavier/ci-lb
