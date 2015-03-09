@@ -11,6 +11,11 @@ tomcat:
   limits:
     memory: 2G
 
+git: 
+  image: tclavier/basic-git
+  limits:
+    memory: 2G
+
 lb:
   image: tclavier/ci-lb
   links:
@@ -18,6 +23,8 @@ lb:
     alias: jenkins
   - name: tomcat
     alias: tomcat
+  - name: git
+    alias: git
   ports:
   - ip: 5.135.124.160
     container_port: 80
