@@ -1,0 +1,4 @@
+#!/bin/bash
+GIT_WORK_TREE=/var/www git checkout -f
+cd /var/www
+/var/www/bin/hugo --theme=hyde --buildDrafts
