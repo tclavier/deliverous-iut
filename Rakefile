@@ -1,3 +1,4 @@
+desc "Stop all containers"
 task :stop do
   `docker stop tomcat`
   `docker stop jenkins`
@@ -7,6 +8,7 @@ task :stop do
   `docker rm lb`
 end
 
+desc "Start all containers"
 task :start => :stop do
   sh "docker run -d --name tomcat tclavier/tomcat"
   sh "docker run -d --name jenkins --link tomcat:tomcat tclavier/jenkins"
