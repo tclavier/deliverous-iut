@@ -13,11 +13,6 @@ tomcat:
 
 git: 
   image: tclavier/basic-git
-  limits:
-    memory: 2G
-  volumes:
-  - name: git-repos
-    path: /repositories
 
 lb:
   image: tclavier/ci-lb
