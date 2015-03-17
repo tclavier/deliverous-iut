@@ -4,5 +4,6 @@ do
   sed -i "s/TOMCAT_PORT_8080_TCP_ADDR/$TOMCAT_PORT_8080_TCP_ADDR/g" -i $job
 done
 
+/etc/init.d/monit start
 /etc/init.d/jenkins start
 tail -f /var/log/jenkins/jenkins.log
