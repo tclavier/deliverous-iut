@@ -30,8 +30,8 @@ lb:
 
 classroom:
   image: tclavier/classroom-ci
-  limits:
-    memory: 2G
   - ip: 5.135.124.160
     container_port: 8080
     host_port: 8080
+  limits:
+    memory: 2G
