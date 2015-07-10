@@ -21,5 +21,11 @@ run patch /etc/init.d/tomcat7 < /tmp/tomcat7.patch
 #Replace default index page
 add index.html /var/lib/tomcat7/webapps/ROOT/index.html
 
+# Install monit to restart tomcat when crash
+run apt-get update && \
+    apt-get install -y monit && \
+    apt-get clean
+add tomcat7.monit /etc/monit/conf.d/tomcat
+
 expose 8080
-cmd /etc/init.d/tomcat7 start; tail -f /var/log/tomcat7/*
+cmd /etc/init.d/monit start; tail -f /var/log/tomcat7/*

@@ -36,3 +36,5 @@ classroom:
     host_port: 8080
   limits:
     memory: 2G
+  deploy_with:
+  - lb

@@ -24,8 +24,9 @@ add http://updates.jenkins-ci.org/latest/deploy.hpi /var/lib/jenkins/plugins/
 
 add ludicode.xml /var/lib/jenkins/jobs/ludicode/config.xml
 add mediashare.xml /var/lib/jenkins/jobs/mediashare/config.xml
-add loupgarou.xml /var/lib/jenkins/jobs/mediashare/config.xml
-add prolab.xml /var/lib/jenkins/jobs/mediashare/config.xml
+add loupgarou.xml /var/lib/jenkins/jobs/loupgarou/config.xml
+add jeudecarte.xml /var/lib/jenkins/jobs/jeudecarte/config.xml
+add prolab.xml /var/lib/jenkins/jobs/prolab/config.xml
 
 run chown -R jenkins:jenkins /var/lib/jenkins/plugins/ /var/lib/jenkins/jobs/
 
