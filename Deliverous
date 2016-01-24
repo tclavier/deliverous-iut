@@ -12,7 +12,7 @@ tomcat:
     memory: 2G
 
 git: 
-  image: tclavier/basic-git
+  image: tclavier/tp-git
 
 lb:
   image: tclavier/ci-lb
