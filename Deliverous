@@ -1,40 +1,7 @@
-jenkins:
-  image: tclavier/jenkins
-  links:
-  - name: tomcat
-    alias: tomcat
-  limits:
-    memory: 2G
-
-tomcat: 
-  image: tclavier/tomcat
-  limits:
-    memory: 2G
-
 git: 
   image: tclavier/tp-git-blog
-
-lb:
-  image: tclavier/ci-lb
-  links:
-  - name: jenkins
-    alias: jenkins
-  - name: tomcat
-    alias: tomcat
-  - name: git
-    alias: git
   ports:
   - ip: 5.135.124.160
     container_port: 80
     host_port: 80
 
-classroom:
-  image: tclavier/classroom-ci
-  ports:
-  - ip: 5.135.124.160
-    container_port: 8080
-    host_port: 8080
-  limits:
-    memory: 2G
-  deploy_with:
-  - lb
